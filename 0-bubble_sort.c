@@ -24,23 +24,23 @@ void swap2(int *a, int *b)
 
 void bubble_sort(int *array, size_t size)
 {
-	unsigned int i = 0, j, temp = size;
+	unsigned int i = 1, j, temp = size;
 
 	if (!array || size < 2)
 		return;
 
-	while (i != 1)
+	while (temp > 1)
 	{
-		i = 1;
-		for (j = 0; j < temp - 1; j++)
+		i = 0;
+		for (j = 1; j <= temp - 1; j++)
 		{
-			if (array[j] > array[j + 1])
+			if (array[j - 1] > array[j])
 			{
-				swap2(array + j, array + j + 1);
+				swap2(array + j - 1, array + j);
 				print_array(array, size);
-				i = 0;
+				i = j;
 			}
 		}
-		temp--;
+		temp = i;
 	}
 }
