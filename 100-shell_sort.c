@@ -10,6 +10,8 @@ void shell_sort(int *array, size_t size)
 {
 	int gap = 1, i, hold, j = 0;
 
+	if (size <= 1 || !array)
+		return;
 	while ((size_t)gap <= size / 3)
 		gap = gap * 3 + 1;
 	for (; gap >= 1; gap = (gap - 1) / 3)
