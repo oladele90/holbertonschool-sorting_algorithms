@@ -16,6 +16,8 @@ void counting_sort(int *array, size_t size)
 {
     int *count, *count_array_for_checker, range, i, tick = 0, j, k;
 
+    if (size < 2 || !array)
+        return;
     range = get_range(array, size);
     count = malloc((range + 1) * sizeof(int));
     count_array_for_checker = malloc((range + 1) * sizeof(int));
