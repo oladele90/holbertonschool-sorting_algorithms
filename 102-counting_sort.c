@@ -49,13 +49,13 @@ void counting_sort(int *array, size_t size)
     printf("\n");
     for (i = 0; i <= range; ++i)
     {
-        if (count[i] > tick)
+        if (count_array_for_checker[i] > tick)
         {
             array[j] = i;
             j++;
             tick++;
         }
-        tick = count[i];
+        tick = count_array_for_checker[i];
     }
 
     free(count);
