@@ -34,7 +34,7 @@ void counting_sort(int *array, size_t size)
         {
             j = count[i];
             k = i;
-            while (j > 0)
+            while (j > 0 && k != range + 1)
             {
                 tick++;
                 count_array_for_checker[k] = tick;
@@ -44,6 +44,8 @@ void counting_sort(int *array, size_t size)
             i = k - 1;
         }
     }
+    if (tick == 1)
+        count_array_for_checker[array[0]] = size;
     tick = 0;
     j = 0;
     for (i = 0; i < range; i++)
