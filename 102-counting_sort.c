@@ -14,7 +14,7 @@ int get_range(int *array, size_t size)
 
 void counting_sort(int *array, size_t size) 
 {
-    int *count, *count_array_for_checker, range, i, tick = 0, j;
+    int *count, *count_array_for_checker, range, i, tick = 0, j, k;
 
     range = get_range(array, size);
     count = malloc((range + 1) * sizeof(int));
@@ -31,14 +31,15 @@ void counting_sort(int *array, size_t size)
         else
         {
             j = count[i];
+            k = i;
             while (j > 0)
             {
                 tick++;
-                count_array_for_checker[i] = tick;
+                count_array_for_checker[k] = tick;
                 j--;
-                i++;
+                k++;
             }
-            count_array_for_checker[i] = tick;
+            i = k - 1;
         }
     }
     tick = 0;
